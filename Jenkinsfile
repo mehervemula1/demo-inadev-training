@@ -8,6 +8,7 @@ pipeline {
         stages {
             stage ("remote access") {
                 steps {
+                    sh "ls"
                     script {
                         withCredentials([usernamePassword(credentialsId: 'ec2-demo-cred', passwordVariable: 'pass', usernameVariable: 'user')]) {
                             remote.user = user
